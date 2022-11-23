@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--PWA-->
+  <link rel="manifest" href="./manifest.json"> 
+  <title>Bedu</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- partial:index.partial.html -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--Carousel-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css'>
+</head>
+<body>
+
+<header>
+<nav class="navbar  navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand abs hide-lg-screen" href="#"><img src="data:image/png;base64,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 class="img-fluid logo" alt="logo"></a>
+              <div class="cart-hide-lg" style="position: relative;">
+
+    <a class="nav-item nav-link " aria-current="page" href="#"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i></a>
+              <span class="cart-counter">1</span>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end offcanvas-menu dark-bg" id="navbarOffcanvas" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button type="button" class="btn-close text-reset btn-close-navbar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav justify-content-start flex-grow-2 pe-3">
+          <a class="nav-item nav-link active light-text f-size-lg" aria-current="page" href="#">Inicio</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#">Acerca de</a>
+          <a class="nav-item nav-link light-text f-size-lg" href="#">Inscripciones</a>
+
+
+          <!--a class="nav-item nav-link light-text f-size-lg" href="#">Contacto</a-->
+
+        </div>
+        <a class="navbar-brand abs small-screen" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUXISf/ajn/bDkAGyYAHCbDVTMHHydkNyy0UTIAHSbtZTgPISf/bjoAHiYAGiYAGSapTTEsJij2ZziPRC8YIifcXjYiJCjPWjXmYjebSDBeNCtzOy27UzN+Py5WMitILirgYDZALClOMCpCLSrTWzWjSzGRRS92PC0yKChpOCyHQS62UTJ7PS1YMys3KincGXt0AAAFgklEQVR4nO2d61bbOhCFkew4sS3bScDkCiGUcG15/8c7IZQ2HJZ3ZEuuhrX297+s7M5YMxrNSGdnhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQgoijVqR56B/clnI9aMV4Wyahf3MripXR7VCzYZqG/tktSOeqNWZ+nsbfxZDplWmvcK9RjTbl9zBkmnURuEfru6fv4KzpeScT/jZktogj6c4ad9d3MKRZ31ZFaBGIeOFgwneNun4o4tA6mrlw1Hdg76y5VGeNxtqHxL2zDq4jialOPvGi76BR3zwKlBi9+DHhAbOQFzryiesy84msCi3oC9HAown3RtxIW22SjVeBSo+kBY1q5lWgUlNhNkyWfk24d9MnWRKrO88ClRqUoUUdUwy9LqTvXEoKiemNf4HmWVASXqx6MKGqBYXELrWL0xg5blo892FCpXdiQmI17UOgUnMpuWl6j0wI6oinMNdCQuIFMmE9aqQ+JVK/RKG1HYC1C3MZxU2U12uDNU5FxIv8EllhhKyQRMkiQx5uVhK+xBjWLiYnFvw0Xd2Bfz+TkLnlwAh6fPpDSstt83dsBLhptEYmvLD6E7vGP2HOg7tp/gr0mYVVyEab5zp40K9g7cLy55XNebt+DZy5JbdAoHm2dDFw3BE8cytR7SKz/YZQpTULqzD/gYL9lfUqUdWNf0Uvg2ZuCdra2+fNxbDZ1/U6aOaGFJqVdSzD56pB3RQpvLHeoeNDORN0NQUKzdD2+8kf4eZLrJfeWWeU0QyF1GnYUkazQm29ecVVLOuY2hPNCjP7lBmWQOrAe2Cg0Na3yhHyUbMNXMdwV5ignEEZi91Xv7grjGGxvIWv94Szwhi2GLVIGvrCVSGs8Sg9C+2j7grx7lILqOo7KiyW0Efvg+/vnRXijHsuQKCjwmgHTSiipO+kMN8iCwqp6DspPHH0L8GCbgrTn9BH7UsgveKiEJ5YBc+4P3BQiDNu/UOGkzooTK7hlmInxIQOCivY2zCVIrC7whj2Npin4Bn3B10V4nZiPZDTSNNVYYx7UQV1QHdVWOBYeC4hI32n83eIK4iCjNhZYT6B0XAm5kPsHi1OVPKHUhZTh5wmxgFRips6KEx+wdMK2IfzD3HJvHEThxYyjOC0P0yBQKXmMhYbN4Vwojb0kcxvHOs0zaf3bwioJboqhN1G++xUQk+bYzUxhsU2LWGH4VrzLmElYypgsXFViGeJwp+teTh7KvE2Kny1xlkhPnxSdfDFxv2EVHpQ9HCOX+GJqdBu6qEXA8+eBu4X8tNPE42hny6l9tO06InK8SmiWIX2fW14OtOyV7wv/PQm4tN8E7Qs5ae/FNeH5Sps8QXBrpqwk6S++rzj5p1i6GlgP736SOHJyame8TNvgVwh+GyXl5kZMP5mHkJnpj7mns7i5pg/tZoN6xX32bU8aj7xDp6XHn6g2/xhHl0uwPyhdWbUI04zpEn0ulbgv0hCqcZlDjitbmdwnlvINTydZ7njVX3iLgZ9K8BJz7rP48Mx7gOZgHXmjd7uVNC70MHwg77uxQg+IvuHnu42ETDm/Iee7qe5l+Kkfd0xZOQI7OeeqPDbimP6uOvLXAk4XftLD/e1iek4ecf/nXt6ICTcf+D93kQR24pjfN99qTJhAr3fXypkW3GM5ztojZBtxTE+7xHWRk4D5l/83QWt1Xojzkff8HSft1HjR6mvevi4k91kiyiWFeuPcL9X39w8FJLy7S+4vY2wX16Gpahc9Csu71vsl5dtJfTzO6LzGyVmOp6IfC3g/3R9Z2Z6fyF3eflMp7eC6odK9PLyifbvPenZMha+vHym7ZtdLxup0b2Rlu+ufZunrAghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIITL4D5tBWn6bN1raAAAAAElFTkSuQmCC" class="img-fluid logo" alt="logo"></a>
+
+        <div class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <!--a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#">Acerca de</a-->
+          
+
+       
+      
+           <div style="position: relative;">
+          <a class="nav-item nav-link hide-link-small light-text" aria-current="page" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-shopping-cart"></i>
+                      <span class="cart-counter">1</span>
+
+          </a>
+          </div>
+          <ul class="d-inl nav-div-social">
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a class="nav-item nav-link  light-text f-size-lg" aria-current="page" href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel" class="offcanvasRightLabel added-items-header mb-0">Agregar más</h5>
+    <button type="button" class="offcanvasRightLabelClose btn-close btn-close-black text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-4">
+        <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="feature thumb 1" class="img-fluid product-img">
+          </div>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="product-title-container">
+            <h5 class="product-title">ALEXPACK</h5>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="product-price-container">
+            <div class="price">
+              <span>
+                $&nbsp;2600.00 </span>
+            </div>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="title-container">
+            <h5 class="title">Cantidad: <span>1</span></h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!--     subtotal -->
+    <div class="subtotal mt-20">
+    <div class="row">
+      <div class="col-9">
+        <h5>Total (sin envio)</h5>
+      </div>
+      <div class="col-3">
+        <div class="subtotal-amount">
+          <span>
+                $&nbsp;2600.00 </span>
+        </div>
+      </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-20">
+                          <a href="" class="outline-btn">Ver carritot &nbsp;&#10230;</a>
+</div>
+        </div>
+      <div class="col-12 checkout-btn-container">
+          <div class="mt-10">
+                          <a href="" class="accent-btn">Checkout &nbsp;&#10230;</a>
+</div>
+        </div>
+    </div>
+       </div>
+  </div>
+</div>
+
+
+
+<!-- start of hero -->
+<section class="hero-slider hero-style">
+	<div class="swiper-container">
+	  <div class="swiper-wrapper">
+		<div class="swiper-slide">
+		  <div class="slide-inner slide-bg-image" data-background="https://images.adsttc.com/media/images/5ab1/b0ef/f197/cc7d/4900/010e/large_jpg/Monterrey_Tec_Library_01.jpg?1521594599">
+			<div class="container1">
+			  <div data-swiper-parallax="300" class="slide-title">
+				<h2>Bedu</h2>
+			  </div>
+			  <div data-swiper-parallax="400" class="slide-text">
+				<p>Bedu <!-- entendemos
+					el mundo moderno y como tener presencia en internet.-->
+				</p>
+			  </div>
+			  <div class="clearfix"></div>
+			  <div data-swiper-parallax="500" class="slide-btns">
+
+				<!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i> Get Info</a-->
+			  </div>
+			</div>
+		  </div>
+		  <!-- end slide-inner -->
+		</div>
+		<!-- end swiper-slide -->
+  
+		<div class="swiper-slide">
+		  <div class="slide-inner slide-bg-image" data-background="https://tec.mx/sites/default/files/styles/crop_galeria_style/public/2018-08/BiblioTEC_1aniv_2.jpg?itok=ga9QYmbO">
+			<div class="container1">
+			  <div data-swiper-parallax="300" class="slide-title">
+				<h2>Bedu</h2>
+			  </div>
+			  <div data-swiper-parallax="400" class="slide-text">
+				<p>Bedu</p>
+			  </div>
+			  <div class="clearfix"></div>
+			  <div data-swiper-parallax="500" class="slide-btns">
+
+				<!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+			  </div>
+			</div>
+		  </div>
+		  <!-- end slide-inner -->
+		</div>
+		<!-- end swiper-slide -->
+
+
+		<div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://tec.mx/sites/default/files/styles/crop_galeria_style/public/2018-08/BiblioTEC_Gal_1aniv%20%281%29.jpg?itok=u-dcQPsm">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>Bedu</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>Bedu</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+			
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+		  <div class="swiper-slide">
+			<div class="slide-inner slide-bg-image" data-background="https://cdn-3.expansion.mx/21/3c/dca7344a46eea65da52c4a99227d/estadio-borregos-tec-de-monterrey.jpg">
+			  <div class="container1">
+				<div data-swiper-parallax="300" class="slide-title">
+				  <h2>U6aOaGFJqVdSzD56pB3RQpvLHeoeNDORN0NQUKzdD2</h2>
+				</div>
+				<div data-swiper-parallax="400" class="slide-text">
+				  <p>Bedu</p>
+				</div>
+				<div class="clearfix"></div>
+				<div data-swiper-parallax="500" class="slide-btns">
+
+				  <!--a href="#" class="theme-btn-s3"><i class="fas fa-chevron-circle-right"></i>Get Info</a-->
+				</div>
+			  </div>
+			</div>
+			<!-- end slide-inner -->
+		  </div>
+		  <!-- end swiper-slide -->
+
+
+
+
+
+
+  
+	  <!-- swipper controls -->
+	  <div class="swiper-pagination"></div>
+	  <div class="swiper-button-next"></div>
+	  <div class="swiper-button-prev"></div>
+	</div>
+  </section>
+  <!-- end of hero slider -->
+
+  <br>
+  <div class="container">
+
+  <div class="row">
+    <div class="col-lg-6 ">
+      <div class="body">
+
+  <div>
+    <h2 class="mb-60 mt-30">Bedu</h2>
+    <h3>El futuro es ahora</h3>
+    <p>Tu talento y crecimiento personal son clave para crear tu proyecto de vida. En PrepaTec desarrollarás las competencias y habilidades necesarias para hacer frente a las oportunidades y retos del futuro y lograr el cambio que el mundo necesita.</p>
+  </div>
+
+</div>
+</div>
+<div class="col-lg-6">
+<div class="img-design">
+  <div class="imgac "> <img src="https://cdn-3.expansion.mx/21/3c/dca7344a46eea65da52c4a99227d/estadio-borregos-tec-de-monterrey.jpg" alt="about img" class="ag-dg1 img-fluid h-scl-base"></div>
+</div>
+</div>
+<div class="col-lg-6 mt30">
+    <div class="itm-media-object mt40 tilt-3d">
+      <div class="media">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/computers.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Bedu </h4>
+          <p>Prepárate para responder a los desafíos del mundo.</p>
+        </div>
+      </div>
+      <div class="media mt40">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/worker.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Bedu</h4>
+          <p>Construye tu propio portafolio de competencias formativas a través de un Sistema Integral de Tutoría</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-lg-6 mt30">
+    <div class="itm-media-object mt40 tilt-3d">
+      <div class="media">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000"><img src="https://separateweb.com/niwax-demo/images/icons/worker.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Bedu</h4>
+          <p>Construye tu propio portafolio de competencias formativas a través de un Sistema Integral de Tutoría</p>
+        </div>
+      </div>
+      <div class="media mt40">
+        <div class="img-ab- base" data-tilt="" data-tilt-max="20" data-tilt-speed="1000" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);"><img src="https://separateweb.com/niwax-demo/images/icons/computers.svg" alt="icon" class="layer"></div>
+        <div class="media-body">
+          <h4>Bedu</h4>
+          <p>Construye tu propio portafolio de competencias formativas a través de un Sistema Integral de Tutoría</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!--FIREBASE-->
+
+<!-- REGISTRO FIREBASE -->
+  <!--MAIN CONTENT-->
+  <div class="container p-5" style="z-index:1">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group posts">
+                
+        </ul>
+      </div>
+    </div>
+  </div>
+              
+  <!--BOOTSTRAP SCRIPTS-->
+  
+      <!-- Modal  SignUP-->
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Registro:
+              Contraseña con al menos 6 caracteres
+            </h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+           </div>
+           <div class="modal-body">
+            <form id="signup-form">
+              <div class="form-group">
+                 <input type="text" id="signup-email" class="form-control"
+                 placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                 <input type="password" id="signup-password" class="form-control"
+                 placeholder="Contraseña" required>
+              </div>
+              <button type="submit" class="btn btn-primary">SignUp</button>
+            </form>
+           </div>
+         </div>
+        </div>
+      </div>
+                 
+                 
+                 
+                  <!-- Modal  SignIn-->
+                  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Ingresa con tu correo de Gmail a nuestra plataforma y mantente informado sobre
+                          promociones y avisos importantes
+                        </h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                       <div class="modal-body">
+                          
+                        <form id="login-form">
+                           
+                          <!--div class="form-group">
+                             <input type="text" id="login-email" class="form-control"
+                             placeholder="E-mail" required>
+                          </div>
+                          <div class="form-group">
+                             <input type="password" id="login-password" class="form-control"
+                             placeholder="Contraseña" required>
+                          </div>
+                          
+                          <button type="submit" class="btn btn-info btn-block">Ingresa</button-->
+                          
+                          <button type="button" class="btn btn-success btn-block black-background white" id="googleLogin"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;Ingresa o Regístrate con Gmail</button>
+                          <!--button type="submit" class="btn btn-primary btn-block" id="facebookLogin"><i class="fab fa-facebook"></i>&nbsp;Ingresa o Regístrate con Facebook</button-->
+                        </form>
+                       </div>
+                     </div>
+                    </div>
+                  </div>
+<!--TERMINA FIREBASE-->
+
+  <footer id="footer" class="footer-bg-dark py-30">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper">
+            <h3>Contacto</h3>
+            <p>prepatec@support.com</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="footer-title-wrapper right">
+            <h3>Conecta</h3>
+            <ul>
+              <li><a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+              <li> <a href="#" class="social-icon">
+                <i class="fab fa-tiktok"></i>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+      <div class="row">
+        <div class="col-lg-4">
+          <p>© 2022 Luis Suchil. All Rights Reserved. <!--br> Hecho con amor <i class="fas fa-heart"></i> by Luis</p-->
+        </div>
+        <div class="col-lg-8">
+          <ul>
+                                  <li><a href="#acerca">Acerca de</a></li>
+                                 
+                                  <li><a href="#inscripciones">Inscripciones</a></li>
+                                  <li><a href="#desayunos">Prepa tec</a></li>
+                              </ul>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+    </footer>
+
+
+  <!--Carousel-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+
+          <!--FIREBASE SCRIPTS-->
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+            
+              <!-- TODO: Add SDKs for Firebase products that you want to use
+                  https://firebase.google.com/docs/web/setup#available-libraries -->
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+              
+                <script>
+                   // Your web app's Firebase configuration
+                   var firebaseConfig = {
+                apiKey: "AIzaSyD9lnm2-ZB8-L1VYovDD-rIF5jXu8EdTzw",
+                authDomain: "human-care-clinic.firebaseapp.com",
+                projectId: "human-care-clinic",
+                storageBucket: "human-care-clinic.appspot.com",
+                messagingSenderId: "615242911884",
+                appId: "1:615242911884:web:3df2a51c271eeea80baba9",
+                measurementId: "G-BEJYVEMDQX"
+              };
+            
+                  // Initialize Firebase
+                  firebase.initializeApp(firebaseConfig);
+                  const auth = firebase.auth();
+                  // FireStore base de datos
+                  const fs = firebase.firestore();
+                  firebase.analytics();
+                </script>
+                <!--TERMINA FIREBASE-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+<!-- partial -->
+</script><script  src="./js/main.js"></script>
+     <!--Registro-->
+     <script src="./registro.js"></script>
+
+     <!-- PWA -->
+<script src="./script.js"></script>
+</body>
+</html>
